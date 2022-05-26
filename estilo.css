@@ -1,0 +1,285 @@
+:root {
+    /* Configuração */
+    --nome_empresa: "Giganima";
+    --font_titulo: arial;
+    --font_menu: arial;
+    --font_content: arial;
+    --index: 20;
+    /* Paleta de Cores */
+    --nome_cor: white;
+    --header_cor: #301B90;
+    --menu_cor: #232323;
+    --menu_cor_hover: #2E2E2E;
+    --content_cor: #6939AF;
+    --footer_cor: rgb(59, 42, 45);
+}
+
+/* Reset */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:focus {
+    outline: none;
+}
+
+html, body {
+    height: 100%;    
+    box-sizing: border-box;
+}
+
+.wrapper {
+    height: 100%;
+    position: relative;
+}
+
+/* Fim Reset */
+
+/* Header */
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    text-align: center;
+    background-color: var(--header_cor);
+    height: 50px;
+    width: 100%;
+    z-index: 7;
+}
+
+.hamblock {
+    cursor: pointer;
+    position: absolute;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 50px;
+    width: 55px;
+    z-index: 8;
+}
+
+.content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--content_cor);
+    width: 100%;
+    min-height: fit-content;
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    z-index: 5;
+}
+
+.blockitemuser {
+    padding: 15px 0px;
+    margin: auto;
+    width: 100%;
+    color: transparent;
+    display: inline-block;
+}
+
+.center {
+    display: inline-block;
+}
+
+.content, .header {
+    box-shadow: -7px -10px 20px 4px rgba(0, 0, 0, 0.473);
+}
+
+.header, .hamblock, .content {
+    transition: all .2s ease-out;
+}
+
+.logo {
+    width: 100%;
+    height: 0;
+}
+
+.logo:after {
+    position: relative;
+    content: var(--nome_empresa);
+    color: var(--nome_cor);
+    font-family: var(--font_titulo);
+    font-size: 20px;
+    top: 11.5px;
+}
+
+a {
+    padding: 20px;
+    background-color: var(--menu_cor);
+    display: flex;
+    color: white;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a:hover {
+    background-color: rgb(70, 70, 70);
+}
+
+.searchblock a {
+    background-color: rgb(71, 71, 71);
+}
+
+.searchblock a:hover {
+    background-color: rgba(255, 255, 255, 0.295);
+}
+
+.searchblock {
+    background-color: var(--menu_cor);
+    position: fixed;
+    top: 0;
+    display: inline-block;
+    width: 250px;
+    z-index: 2;
+}
+
+.menulist {
+    background-color: var(--menu_cor);
+    width: 250px;
+    height: 100%;  
+    z-index: 1;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.searchblock .img0 {
+    margin-top: 0px;
+    height: 18px;
+}
+
+.menulist .img1{ 
+    margin-top: 3px;
+    height: 12px;
+}
+
+.menulist .img2, .img3, .img4 {
+    margin-top: 3px;
+    height: 13px;
+}
+
+.menulist .img5, .img6 {
+    height: 25px;
+}
+
+.menulist .img7, .img8  {
+    margin-top: 2px;
+    height: 15px;
+}
+
+.blockitemmenu {
+    padding:45px;
+    color: transparent;
+}
+.blockitemmenu:hover, .blockitemuser:hover {
+    background-color: var(--menu_cor);
+    cursor: auto;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px rgba(128, 128, 128, 0);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(159, 159, 160);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(190, 190, 190, 0.589);
+}
+
+.hamcheck {
+    display: none;
+}
+
+.hamburger, .hamburger:after, .hamburger:before {
+    background-color: white;
+    display: block;
+}
+
+.hamburger {
+    position: relative;
+    height: 4px;
+    width: 28px;
+    margin: 23px 13px;
+}
+
+.hamburger:after, .hamburger:before {
+    position: absolute;
+    content: '';
+    height: 100%;
+    width: 100%;
+}
+
+.hamburger:after {
+    top: -8px;
+}
+
+.hamburger:before {
+    top: 8px;
+}
+
+.text-search {
+    float: left;
+    font-size: 20px;
+    height: 50px;
+    width: 70%;
+    background-color: #D6D3CA;
+    border: none;
+}
+
+.btn-search {
+    float: left;
+    height: 50px;
+    width: 30%;
+    background: url('lupa.png') no-repeat center;
+    background-color: #00CA4F;
+    border: none;
+    cursor: pointer;
+}
+
+.reload {
+    float: right;
+    height: 50px;
+    width: 60px;
+    background: url('reload.png') no-repeat center;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.reload:hover, .reload:active {
+    background-color: rgb(64, 46, 145);
+}
+
+.hamcheck:checked~.hamlabel .hamblock, .hamcheck:checked~.header, .hamcheck:checked~.content {
+    left: 250px;
+    width: calc(100vw - 250px);
+}
+
+/* Aphabet Block */
+
+.ab {
+    margin: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    padding-top: 12px;
+    font-size: 23px;
+    height: 38px;
+    width: 54px;
+    background-color: #00CA4F;
+    color: white;
+    display: inline-block;
+    font-weight: bold;
+    cursor: pointer;
+    display: inline-block;
+}
